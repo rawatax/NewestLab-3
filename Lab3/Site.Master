@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Lab3.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>site by Anu Rawat </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body id="body" runat="server" style="background-color: yellow">
+    <form runat="server">
+        <asp:Image ID="Image1" runat="server" ImageUrl="/images/school.jpg" Width="200px" Height="100px" ImageAlign="Middle" />
+        <p align="center">
+            <asp:Label ID="Label1" runat="server" Text="An exiting day to have fun and play!" Font-Italic="true"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Site by Anu Rawat and Ferdy Sityar" Font-Italic="true"></asp:Label>
+        </p>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">FUN FIELD DAY PROGRAM</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="HomePage.aspx">Home          </a></li>
+                        <li><a href="Students.aspx">Students          </a></li>
+                        <li><a href="Teacher.aspx">Teacher Sign up        </a></li>
+                        <li><a href="Events.aspx">Events     </a></li>
+                        <li>
+                            <asp:Button ID="btnLogout" OnClick="btnLogout_Click" runat="server" Text="LOGOUT" CausesValidation="false" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <hr />
+        </div>
+
+    </form>
+</body>
+</html>
